@@ -1,5 +1,7 @@
 const board = document.getElementById("board");
 
+let paint = "violet";
+
 // loops 16 times
 for (var i = 0; i < 16; i++) {
   var row = document.createElement("div");
@@ -13,9 +15,10 @@ for (var i = 0; i < 16; i++) {
   }
 }
 
-// const rows = document.querySelectorAll(".rows");
-// // for columns
-// for (var i = 0; i < 16; i++) {
-//   console.log("inside column");
-//   rows.innerHTML = "1";
-// }
+const col_hover = document.getElementsByClassName("column");
+
+Array.from(col_hover).forEach(function (element) {
+  element.addEventListener("mouseover", function () {
+    element.style.backgroundColor = paint;
+  });
+});
