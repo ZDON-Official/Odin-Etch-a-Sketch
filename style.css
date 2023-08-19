@@ -36,6 +36,90 @@ h1{
     text-align: center;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* border: solid; */
+}
+
+
+/* ================================================================================ */
+/* ! Code for the options section */
+/* ================================================================================ */
+
+.options{
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    margin-right: 40px;
+    padding: 10px;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+    /* height: ; */
+
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+/* TODO: code for the size slider */
+
+.slider{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#size_slider{
+    align-items: center;
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 23px; */
+    outline: none;
+    height: 4px;
+    border: 0;
+    border-radius: 4px;
+
+    /* ! play around with the color - maybe change it to the color of the paint */
+    background-color: purple;
+
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#size_slider:hover{
+    opacity: 1;
+}
+
+/* TODO: play around with the shape */
+#size_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 10px;
+    border-radius: 15px;
+    background: black;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+  /* ================================================================================ */
+  /* ================================================================================ */
+
+
 #board{
     border: 2px solid black;
     /* height: 400px; */
