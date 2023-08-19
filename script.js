@@ -7,10 +7,14 @@ const slider_val = document.getElementById("slider_value");
 const new_board = document.getElementById("new_board");
 const reset_board = document.getElementById("reset_board");
 
+const color_picker = document.getElementById("color");
+
 const board_width = 600;
 
+// =================================================================================================
+
 let slider_value = slider.value;
-let paint = "#7F00FF";
+let paint = color_picker.value;
 let size = slider_value;
 let col_size = board_width / size;
 
@@ -37,10 +41,11 @@ function draw_board() {
   // col_hover = document.getElementsByClassName("column");
 }
 
-// TODO: add code to change the paint color
-function change_color() {
-  // ! add code here
-}
+// function change_color(color) {
+//   console.log(`color changed to ${color}`);
+//   paint = color;
+//   document.documentElement.style.setProperty("--primary_color", color);
+// }
 
 function clear_board() {
   board.textContent = "";
@@ -62,6 +67,12 @@ new_board.addEventListener("click", function () {
 reset_board.addEventListener("click", function () {
   clear_board();
   draw_board();
+});
+
+color_picker.addEventListener("change", function () {
+  console.log(`color changed to ${this.value}`);
+  paint = this.value;
+  document.documentElement.style.setProperty("--primary_color", this.value);
 });
 
 $("#board").on("mouseover", ".column", function () {
