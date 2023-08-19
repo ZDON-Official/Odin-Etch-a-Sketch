@@ -1,6 +1,6 @@
 :root{
     --background_color: #dee4e7;
-
+    --primary_color: #7F00FF;
 
     --box-shadow: 0 1px 1px rgba(0,0,0,0.15),
     0 2px 2px rgba(0,0,0,0.15),
@@ -70,6 +70,10 @@ p{
 
 /* TODO: code for the size slider */
 
+.slider_container{
+    width: 100%;
+}
+
 .slider{
     display: flex;
     align-items: center;
@@ -87,7 +91,7 @@ p{
     border-radius: 4px;
 
     /* ! play around with the color - maybe change it to the color of the paint */
-    background-color: purple;
+    background-color: var(--primary_color);
 
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -107,17 +111,57 @@ p{
     border-radius: 15px;
     background: black;
     cursor: pointer;
-  }
+}
+
+button{
+    background-color: transparent;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+
+#new_board{
+
+}
+
+#new_board:hover{
+    cursor: pointer;
+}
+
+#reset_board{
+
+}
+
+#reset_board:hover{
+    cursor: pointer;
+}
 
 
 
+.color_picker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+#color{
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 4px;
+    height: 20px;
+    width: 100%;
+    margin: 0%;
+    margin-top: 5px;
+    padding: 0%;
+}
 
 
-
-
-
-  /* ================================================================================ */
-  /* ================================================================================ */
+/* ================================================================================ */
+/* ================================================================================ */
 
 
 #board{

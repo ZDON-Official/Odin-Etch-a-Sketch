@@ -12,13 +12,20 @@
         <h1>Etch-a-Sketch</h1>
         <div class="container">
             <div class="options">
-                <div class="slider">
-                    <p>grid Size</p>
-                    <input type="range" min="2" max="100" value = "16" id="size_slider" >
-                    <span id="slider_value">16</span>
-                </div>
-                <button>New Board</button>
+                <div class="slider_container">
+                    <div class="slider">
+                        <p>grid Size</p>
+                        <input type="range" min="2" max="100" value = "16" id="size_slider" >
+                        <span id="slider_value">16</span>
+                    </div>
+                    <button id="new_board">New Board</button>
 
+                </div>
+
+                <div class="color_picker">
+                    <label for="colorpicker">Change Color</label>
+                    <input type="color" id="color" value="#7F00FF">
+                </div>
 
                 <button id="reset_board">Erase Board</button>
 

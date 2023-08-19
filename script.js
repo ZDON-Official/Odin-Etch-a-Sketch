@@ -1,6 +1,6 @@
 const board = document.getElementById("board");
 
-let paint = "violet";
+let paint = "#7F00FF";
 let size = 32;
 const board_width = 600;
 
@@ -37,8 +37,8 @@ function resize(new_size) {
 }
 
 // TODO: add code to change the paint color
-function change_color(){
-    // ! add code here
+function change_color() {
+  // ! add code here
 }
 
 Array.from(col_hover).forEach(function (element) {
