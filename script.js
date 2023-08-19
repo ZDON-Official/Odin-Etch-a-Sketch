@@ -1,13 +1,19 @@
 const board = document.getElementById("board");
+let col_hover = document.getElementsByClassName(".column");
 
-let paint = "#7F00FF";
-let size = 32;
+const slider = document.getElementById("size_slider");
+const slider_val = document.getElementById("slider_value");
+
+const new_board = document.getElementById("new_board");
+
 const board_width = 600;
 
-var col_size = board_width / size;
+let slider_value = slider.value;
+let paint = "#7F00FF";
+let size = slider_value;
+let col_size = board_width / size;
 
-const col_hover = document.getElementsByClassName("column");
-
+slider_val.innerHTML = slider_value;
 draw_board();
 
 // draws the sketch board
@@ -26,14 +32,8 @@ function draw_board() {
       column.style.width = col_size + "px";
     }
   }
-}
 
-// change the size of the grid
-function resize(new_size) {
-  size = new_size;
-
-  console.log(`new size is ${size}`);
-  console.log(`new col_size is ${col_size}`);
+  // col_hover = document.getElementsByClassName("column");
 }
 
 // TODO: add code to change the paint color
@@ -41,8 +41,23 @@ function change_color() {
   // ! add code here
 }
 
-Array.from(col_hover).forEach(function (element) {
-  element.addEventListener("mouseover", function () {
-    element.style.backgroundColor = paint;
-  });
+slider.oninput = function () {
+  slider_value = this.value;
+  slider_val.innerHTML = slider_value;
+};
+
+new_board.addEventListener("click", function () {
+  size = slider_value;
+  col_size = board_width / size;
+
+  clear_board();
+  draw_board();
+});
+
+function clear_board() {
+  board.textContent = "";
+}
+
+$("#board").on("mouseover", ".column", function () {
+  $(this)[0].style.backgroundColor = paint;
 });
