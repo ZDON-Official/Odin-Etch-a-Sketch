@@ -5,6 +5,7 @@ const slider = document.getElementById("size_slider");
 const slider_val = document.getElementById("slider_value");
 
 const new_board = document.getElementById("new_board");
+const reset_board = document.getElementById("reset_board");
 
 const board_width = 600;
 
@@ -41,6 +42,10 @@ function change_color() {
   // ! add code here
 }
 
+function clear_board() {
+  board.textContent = "";
+}
+
 slider.oninput = function () {
   slider_value = this.value;
   slider_val.innerHTML = slider_value;
@@ -54,9 +59,10 @@ new_board.addEventListener("click", function () {
   draw_board();
 });
 
-function clear_board() {
-  board.textContent = "";
-}
+reset_board.addEventListener("click", function () {
+  clear_board();
+  draw_board();
+});
 
 $("#board").on("mouseover", ".column", function () {
   $(this)[0].style.backgroundColor = paint;
